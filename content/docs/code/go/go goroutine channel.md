@@ -1,5 +1,5 @@
 +++
-title = "goroutine 和 通道"
+title = "go goroutine channel"
 description = "goroutine 和 通道"
 
 date = "2021-04-19"

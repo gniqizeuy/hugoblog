@@ -18,7 +18,8 @@ Life Adventurer
 ## work experience
 
 NCIT - trainee       2020.05 - 2020.06  
-GT - java engineer       2020.07 - 2021.03
+GT - java engineer       2020.07 - 2021.03  
+kaiwu - Go engineer       2021.04 - now
 
 {{< /columns >}}
 
