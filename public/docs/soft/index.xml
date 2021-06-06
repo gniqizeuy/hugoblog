@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gniqizeuy blog</title>
+    <link>http://example.org/docs/soft/</link>
+    <description>Recent content on gniqizeuy blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="http://example.org/docs/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>centos update git</title>
+      <link>http://example.org/docs/soft/centos-git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/centos-git/</guid>
+      <description>系统自带 git 版本较低
+卸载旧版本的Git
+yum remove git -y 要升级Git，首先要安装一些依赖包； 安装基本的依赖包
+yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel nss gcc perl-ExtUtils-MakeMaker -y 下载最新的git源码包：
+https://mirrors.edge.kernel.org/pub/software/scm/git/ 解压、编译安装：
+wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz tar xf git-2.9.5.tar.xz cd git-2.9.5 ./configure --prefix=/usr/local/git make &amp;amp;&amp;amp; make install 配置环境变量：
+export PATH=$PATH:/usr/local/git/bin source /etc/profile 查看版本
+git version git version 2.9.5  注意：但是如果缺少了nss包的话，在拉取以https开头的URL地址时就会有以下的几个异常信息；
+ fatal: Unable to find remote helper for ‘https’fatal: unable to access ‘https://github.com/fatih/vim-go.git/‘: SSL connect error 可以执行安装:</description>
+    </item>
+    
+    <item>
+      <title>docker timezone</title>
+      <link>http://example.org/docs/soft/docker-time/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/docker-time/</guid>
+      <description>查看容器时间
+docker exec -it xxx date 查看本地时区文件
+ls -l /etc/localtime 拷贝本地时区文件
+docker cp xxx xxx:/etc/localtime </description>
+    </item>
+    
+    <item>
+      <title>hugo install</title>
+      <link>http://example.org/docs/soft/hugo-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/hugo-install/</guid>
+      <description>使用 yum 安装 hugo
+新建 hugo.repo 文件, 访问 https://copr.fedorainfracloud.org/coprs/daftaupe/hugo/ 选择合适版本
+vim /etc/yum.repos.d/hugo.repo 更新 yum
+yum upgrade 安装 hugo
+yum install hugo </description>
+    </item>
+    
+    <item>
+      <title>mutagen</title>
+      <link>http://example.org/docs/soft/mutagen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/mutagen/</guid>
+      <description>mutagen.io
+Installation#Linuxwget https://github.com/mutagen-io/mutagen/releases/download/v0.11.8/mutagen_linux_amd64_v0.11.8.tar.gz
+tar zxvf mutagen_linux_*.tar.gz -C /usr/local/bin
+mutagen daemon start #启动
+Windowsgithub issue: issue
+download tar.gz: amd64.v0.11.8.tar.gz ; add to path
+设置 MUTAGEN_SSH_PATH 变量指向 SSH 可执行文件的目录，暂不支持 Windows 的 SSH 客户端
+采用 git for windows 注意 git 安装地址为 C: 默认地址
+将 MUTAGEN_SSH_PATH 指向 GIT_INSTALL_ROOT\usr\bin
+create session#mutagen sync create
+list session#mutagen sync session
+monitor session#mutagen sync monitor</description>
+    </item>
+    
+    <item>
+      <title>protobuf install</title>
+      <link>http://example.org/docs/soft/protobuf-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/protobuf-install/</guid>
+      <description>新版本
+google protobuf-3.6.1是现在最新版本，添加了新的特性，看说明
+下载地址 https://github.com/protocolbuffers/protobuf/releases
+我下载的是protobuf-all-3.6.1.tar.gz 包
+新版本不需要执行autogen.sh脚本，直接./configure就行
+tar zvxf protobuf-all-3.6.1.tar.gzcd protobuf-3.6.1./configure –prefix=/usr/local/sudo make # 要编译很久sudo make checksudo make install 编译安装protobuf的编译器protoc
+wget https://github.com/google/protobuf/releases/download/v3.6.1/protobuf-all-3.6.1.tar.gztar zxvf protobuf-all-3.6.1.tar.gz./autogen.sh./configuremakemake install 错误处理
+1、./autogen.sh执行报错./autogen.sh: line 38: autoreconf: command not found
+安装autoconf和automakeyum -y install gcc automake autoconf libtool make安装g++:yum install gcc gcc-c++ </description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>http://example.org/docs/soft/ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/ssh/</guid>
+      <description>ssh 服务异常#ssh failed to start OpenSSH Server daemon
+sshd -t 提示服务无法加载ssh_host_rsa_key,ssh_host_ecdsa_key 推测估计是权限问题
+尝试以下方法
+chmod 600 /etc/ssh/ssh_host_rsa_key chmod 600 /etc/ssh/ssh_host_ecdsa_ke service sshd star # 方法2：或者尝试操作如下 chown -R root.root /var/empty/sshd chmod 744 /var/empty/sshd service sshd restart </description>
+    </item>
+    
+    <item>
+      <title>vscode remote</title>
+      <link>http://example.org/docs/soft/vs-code-remote/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/vs-code-remote/</guid>
+      <description>安装 remote-ssh 插件
+配置免密登录
+打开git bash 执行 ssh-keygen 命令
+生成文件在 ~/.ssh 下
+id_rsa id_rsa.pub私钥 公钥 使用 ssh-copy-id 命令添加本机密钥
+ssh-copy-id &amp;lt;user&amp;gt;@&amp;lt;host&amp;gt; 编辑 C:\User\xxx.ssh\config
+Host centos # 服务器名称HostName xxx # 远程服务器的 IP 地址或域名User xxx # 用户名IdentityFile xxx # 私钥路径 </description>
+    </item>
+    
+  </channel>
+</rss>

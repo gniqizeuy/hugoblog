@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.82.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Mysql 调优">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Mysql tuning" />
+<meta property="og:description" content="Mysql 调优" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/mysql-tuning/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-04-12T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-04-12T00:00:00&#43;00:00" />
+
+<title>Mysql tuning | gniqizeuy blog</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2bc2364a4a4b31f0ec1debecf0a8f90a840821f143dfe1ac6a0f7cbcbdcf64ac.css" integrity="sha256-K8I2SkpLMfDsHevs8Kj5CoQIIfFD3&#43;Gsag98vL3PZKw=">
+<script defer src="/en.search.min.c2d55c7b23ae6f2622705093e885d18733c13f0fbaec6d8a2b86741537af32fc.js" integrity="sha256-wtVceyOubyYicFCT6IXRhzPBPw&#43;67G2KK4Z0FTevMvw="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>gniqizeuy blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/" class="">shortcodes</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="http://example.org/docs/shortcodes/section/" class="">Section</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page1/" class="">Page1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page2/" class="">Page2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-77bacf5307705b0e9e80c2f6765b680f" class="toggle"  />
+    <label for="section-77bacf5307705b0e9e80c2f6765b680f" class="flex justify-between">
+      <a  class="">Vue</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/vue/other/" class="">other</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/vue/proxy/" class="">proxy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a16130a6c009a6b080cd08ba4c28b6ed" class="toggle"  />
+    <label for="section-a16130a6c009a6b080cd08ba4c28b6ed" class="flex justify-between">
+      <a  class="">Go</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-time/" class="">go time</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-function/" class="">go function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-interface/" class="">go interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-goroutine-channel/" class="">go goroutine channel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-summary/" class="">go summary</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-composite-data/" class="">go composite data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-10d41b0387e5bda7e9958b9b5ece051e" class="toggle"  />
+    <label for="section-10d41b0387e5bda7e9958b9b5ece051e" class="flex justify-between">
+      <a  class="">Docker</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/docker/docker-cmd/" class="">docker command</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f02ded928a5d77bc31b203aa8a8d4857" class="toggle"  />
+    <label for="section-f02ded928a5d77bc31b203aa8a8d4857" class="flex justify-between">
+      <a  class="">Soft</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/centos-git/" class="">centos update git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/docker-time/" class="">docker timezone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/hugo-install/" class="">hugo install</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/mutagen/" class="">mutagen</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/protobuf-install/" class="">protobuf install</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/ssh/" class="">ssh</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/vs-code-remote/" class="">vscode remote</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Mysql tuning</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#schema-与-数据类型优化">Schema 与 数据类型优化</a>
+          <ul>
+            <li><a href="#11-选择优化的数据类型">1.1 选择优化的数据类型</a>
+              <ul>
+                <li><a href="#111-整数类型">1.1.1 整数类型</a></li>
+                <li><a href="#412-实数类型">4.1.2 实数类型</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+<article class="markdown">
+  <h1>
+    <a href="/posts/mysql-tuning/">Mysql tuning</a>
+  </h1>
+  
+  <h5>April 12, 2021</h5>
+
+
+
+  
+  <div>
+    
+      <a href="/categories/mysql/">Mysql</a>
+  </div>
+  
+
+  
+
+
+  <p><h2 id="schema-与-数据类型优化">
+  Schema 与 数据类型优化
+  <a class="anchor" href="#schema-%e4%b8%8e-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%bc%98%e5%8c%96">#</a>
+</h2>
+<p>良好的<strong>逻辑设计</strong>和<strong>物理设计</strong>是高性能的基石，应该根据系统将要执行的<strong>查询语句</strong>来设计 schema</p>
+<h3 id="11-选择优化的数据类型">
+  1.1 选择优化的数据类型
+  <a class="anchor" href="#11-%e9%80%89%e6%8b%a9%e4%bc%98%e5%8c%96%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b">#</a>
+</h3>
+<p>以下几个原则可以提供参考</p>
+<details >
+  <summary>更小的通常更好</summary>
+  <div class="markdown-inner">
+    <p>使用<strong>最小数据类型</strong>存储数据（例如只要存0～200，tinyint unsigned 更好)</p>
+<p>更小的数据类型通常更快，占用更少的磁盘、内存和 CPU 缓存，并且处理时需要的 CPU 周期也更少。</p>
+<p>但需确保低估需要存储的值的范围，因为在 schema 中的多个地方增加数据类型范围是一个非常耗时和痛苦的操作。如果无法确定哪个数据类型是最好的，就选择你认为不会超过范围的最小类型</p>
+
+  </div>
+</details>
+
+<details >
+  <summary>简单就好</summary>
+  <div class="markdown-inner">
+    <p><strong>简单数据类型</strong>的操作通常需要更少的 CPU 周期。</p>
+<p>例如，整形比字符操作代价更低，因为字符集和校对规则/排序规则是字符比较整形比较更复杂。举例：一个是使用 MySQL 内建的类型即 date,time,datatime 而不是字符串来存储日期和时间<br>
+　　　另一个应该用整形存储 IP 地址</p>
+
+  </div>
+</details>
+
+<details >
+  <summary>尽量避免 NULL</summary>
+  <div class="markdown-inner">
+    <p>通常最好指定列为 <strong>NOT NULL</strong> ，除非真的需要存储 null 值</p>
+<p>如果查询中包含 NULL 的列，对 MySQL 来说更难优化，可为 NULL 的列使得索引、索引统计和值比较都更复杂。</p>
+<p>可为 NULL 的列会使用更多的存储空间，在 MySQL 中也需要特殊处理。当可为 NULL 的列被索引时，每个索引记录需要一个额外的字节，在 MyISAM 里甚至还可能导致固定大小的索引（例如只有一个整数列的索引）变成可变大小的索引</p>
+<p>通常把可为 NULL 的列改为 NOT NULL 带来的性能提升比较小，所以（调优）没有必要首先在现有 schema 中查找并修改这种情况，除非这会导致问题。</p>
+<p>但是，如果计划在列上建索引，就应该尽量避免设计成可为 NULL 的列。</p>
+<p>在 InnoDB 中使用单独的 bit 存储 NULL 值，所以对于稀疏数据（很多值为 NULL，只有少数行的列有非 NULL 值）有很好的空间效率。但这一点不适用于 MyISAM。</p>
+
+  </div>
+</details>
+
+<p>为列选择数据类型时，第一步需要<strong>确定合适的大类型</strong>：数字、字符串、时间等。</p>
+<p>接着选择<strong>具体类型</strong>。很多数据类型可以存储相同类型的数据，但会有以下区别</p>
+<ul>
+<li>允许的精度不同</li>
+<li>存储的长度和范围不一样</li>
+<li>需要的物理空间（磁盘和内存空间）不同</li>
+</ul>
+<p>相同大类型的不同子类型数据有时也有一些特殊的行为和属性。</p>
+<p>例如，DATATIME 和 TIMESTAMP 列都可以存储相同类型的数据：时间和日期，精确到秒。<br>
+但 TIMESTAMP 只使用 DATATIME 一半的存储空间，且会根据时区变化，具有特殊的自动更新能力。<br>
+另一方面，TIMESTAMP 允许的时间范围要小的多，有时候它的特殊能力会成为障碍。</p>
+<p>MySQL 为了兼容性支持很多别名，例如 INTERGER、BOOL、以及 NUMERIC。它们都只是别名，不会影响性能。如果建表时采用数据类型的别名，然后用 <code>SHOW CREATE TABLE</code> 检查，会发现 MySQL 报告的是基本类型，而不是别名。</p>
+<h4 id="111-整数类型">
+  1.1.1 整数类型
+  <a class="anchor" href="#111-%e6%95%b4%e6%95%b0%e7%b1%bb%e5%9e%8b">#</a>
+</h4>
+<p>有两种类型的数字：整数和实数，存储整数可以使用这几种类型：</p>
+<table>
+<thead>
+<tr>
+<th>TINYINT</th>
+<th>SMALLINT</th>
+<th>MEDIUMINT</th>
+<th>INT</th>
+<th>BIGINT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8 bit</td>
+<td>16 bit</td>
+<td>24 bit</td>
+<td>32 bit</td>
+<td>64 bit</td>
+</tr>
+</tbody>
+</table>
+<p>存储的值范围从 $-2^{N-1}$ 到 $2^{N-1}-1$ 。N 是存储空间的位数</p>
+<p>整数类型可选 UNSIGNED 属性，表示不允许负值，这大致可以使正数的上限提高一倍。</p>
+<pre><code>例如，TINYINT UNSIGNED 可以存储的范围是 0 ~ 255，TINYINT 的存储范围是 -128 ~ 127。
+</code></pre>
+<p>有符号和无符号类型使用相同的存储空间，并具有相同的性能，因此可以根据实际情况选择合适的类型</p>
+<p>你的选择决定 MySQL 是怎么在内存和磁盘中保存数据的。然而，整数计算一般使用 64 位的 BIGINT 整数，即使在 32 位环境中也是如此（一些聚合函数是例外，它们使用 DECIMAL 或 DOUBLE 进行计算）。</p>
+<p>MySQL 可以为整数类型指定宽度，例如 INT(11)，它不会限制值得合法范围，只是规定了 MySQL 的一些交互工具（例如命令行客户端）用来显示字符的个数。对于存储和计算来说，INT(1) 和 INT(20) 是相同的。</p>
+<blockquote>
+<p>一些第三方存储引擎，比如 Infobright，有时也有自定义的存储格式和压缩方案，并不一定使用常见的 MySQL 内置引擎方式</p>
+</blockquote>
+<h4 id="412-实数类型">
+  4.1.2 实数类型
+  <a class="anchor" href="#412-%e5%ae%9e%e6%95%b0%e7%b1%bb%e5%9e%8b">#</a>
+</h4>
+<p>实数即带小数点的数字，然而并不只是为了存储小数部分，也可以用 DECIMA 存储比 BIGINT 大的整数</p>
+<p>MySQL 既支持精确类型，也支持不精确类型</p></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc" style="box-sizing: unset;">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#schema-与-数据类型优化">Schema 与 数据类型优化</a>
+          <ul>
+            <li><a href="#11-选择优化的数据类型">1.1 选择优化的数据类型</a>
+              <ul>
+                <li><a href="#111-整数类型">1.1.1 整数类型</a></li>
+                <li><a href="#412-实数类型">4.1.2 实数类型</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

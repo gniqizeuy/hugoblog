@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.82.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="goroutine 和 通道">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="go goroutine channel" />
+<meta property="og:description" content="goroutine 和 通道" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/go/go-goroutine-channel/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-04-19T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-04-19T00:00:00&#43;00:00" />
+
+<title>go goroutine channel | gniqizeuy blog</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2bc2364a4a4b31f0ec1debecf0a8f90a840821f143dfe1ac6a0f7cbcbdcf64ac.css" integrity="sha256-K8I2SkpLMfDsHevs8Kj5CoQIIfFD3&#43;Gsag98vL3PZKw=">
+<script defer src="/en.search.min.c2d55c7b23ae6f2622705093e885d18733c13f0fbaec6d8a2b86741537af32fc.js" integrity="sha256-wtVceyOubyYicFCT6IXRhzPBPw&#43;67G2KK4Z0FTevMvw="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>gniqizeuy blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/" class="">shortcodes</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="http://example.org/docs/shortcodes/section/" class="">Section</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page1/" class="">Page1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page2/" class="">Page2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-77bacf5307705b0e9e80c2f6765b680f" class="toggle"  />
+    <label for="section-77bacf5307705b0e9e80c2f6765b680f" class="flex justify-between">
+      <a  class="">Vue</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/vue/other/" class="">other</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/vue/proxy/" class="">proxy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a16130a6c009a6b080cd08ba4c28b6ed" class="toggle" checked />
+    <label for="section-a16130a6c009a6b080cd08ba4c28b6ed" class="flex justify-between">
+      <a  class="">Go</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-time/" class="">go time</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-function/" class="">go function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-interface/" class="">go interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-goroutine-channel/" class=" active">go goroutine channel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-summary/" class="">go summary</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-composite-data/" class="">go composite data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-10d41b0387e5bda7e9958b9b5ece051e" class="toggle"  />
+    <label for="section-10d41b0387e5bda7e9958b9b5ece051e" class="flex justify-between">
+      <a  class="">Docker</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/docker/docker-cmd/" class="">docker command</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f02ded928a5d77bc31b203aa8a8d4857" class="toggle"  />
+    <label for="section-f02ded928a5d77bc31b203aa8a8d4857" class="flex justify-between">
+      <a  class="">Soft</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/centos-git/" class="">centos update git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/docker-time/" class="">docker timezone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/hugo-install/" class="">hugo install</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/mutagen/" class="">mutagen</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/protobuf-install/" class="">protobuf install</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/ssh/" class="">ssh</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/vs-code-remote/" class="">vscode remote</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>go goroutine channel</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#11-goroutine">1.1 goroutine</a></li>
+            <li><a href="#12-通道">1.2 通道</a>
+              <ul>
+                <li><a href="#121--无缓冲通道">1.2.1  无缓冲通道</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><p>Go 有两种并发编程的风格。goroutine 和 通道，以及共享内存多线程的传统模型</p>
+<p>goroutine 和 通道（channel），支持<strong>通信顺序进程</strong>（Communicating Sequential Process，CSP），CSP 是一个并发的模式，在不同的执行体（goroutine）之间传递值，但是变量本身局限于单一的执行体。</p>
+<h3 id="11-goroutine">
+  1.1 goroutine
+  <a class="anchor" href="#11-goroutine">#</a>
+</h3>
+<p>Go 中，每一个并发执行的活动称为 goroutine</p>
+<p>一个程序启动时，只有一个 goroutine 来调用 main 函数，称为 主goroutine 。新的 goroutine 通过 go 语句进行创建。语法上，一个 go 语句是在普通函数或方法调用前加上 go 关键字前缀。</p>
+<p>go 语句使函数在一个新创建的 goroutine 中调用。go 语句本身的执行立即完成</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#008b45">f</span>()	<span style="color:#228b22">// 调用 f()，等待它返回
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">go</span> <span style="color:#008b45">f</span>()	<span style="color:#228b22">// 新建一个 goroutine 调用 f()，不用等待
+</span></code></pre></div><p>main 函数返回时，所有的 goroutine 都暴力地直接终结，然后程序退出。除了从 main 返回或者退出程序之外，没有程序化的方法让一个 goroutine 来停止另一个，但可以通过与 goroutine 通信来要求它自己停止。</p>
+<h3 id="12-通道">
+  1.2 通道
+  <a class="anchor" href="#12-%e9%80%9a%e9%81%93">#</a>
+</h3>
+<p>goroutine 说是 Go 程序并发的执行体，通道就是它们之间的连接</p>
+<p>通道是可以让一个 goroutine 发送特定值到另一个 goroutine 的通信机制。每一个通道是一个具体类型的导管，叫作通道的<strong>元素类型</strong>。一个有 int 类型元素的通道写为<code>chan int</code></p>
+<p>使用内置的 make 函数来创建一个通道</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">ch := <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#00688b;font-weight:bold">int</span>)	<span style="color:#228b22">// ch 的类型是 &#39;chan int&#39;
+</span></code></pre></div><p>像 map 一样，通道是一个使用 make 创建的数据结构的引用。当复制或者作为参数传递到一个函数时，复制的是引用，这样调用者和被调用者都引用同一份数据结构。和其他引用类型一样，通道的零值是 <code>nill</code></p>
+<p>同种类型的通道可以使用 == 符号进行比较。当二者都是同一份通道数据的引用时，比较值为 true，通道也可以和 nill 进行比较。</p>
+<p>通道有两个主要操作：发送（send）和接收（receive），两者统称为<strong>通信</strong>。send 语句从一个 goroutine 传输一个值到另一个在执行接收表达式的 goroutine。两个操作都使用 <code>&lt;-</code> 操作符书写。发送语句中，通道和值分别在 <code>&lt;-</code> 的左右两边。在接收表达式中，<code>&lt;-</code> 放在通道操作数的前面。在接收表达式中，其结果未被使用也是合法的。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">ch &lt;- x	<span style="color:#228b22">// 发送语句
+</span><span style="color:#228b22"></span>x = &lt;-ch	<span style="color:#228b22">// 赋值语句中的接收表达式
+</span><span style="color:#228b22"></span>&lt;-ch	<span style="color:#228b22">// 接收语句，丢弃结果
+</span></code></pre></div><p>通道支持第三个操作：关闭（close），它设置一个标志位来指示值当前已经发送完毕，这个通道后面没有值了；关闭后的发送操作将导致宕机。在一个已经关闭的通道上进行接收操作，将获取所有已经发送的值，直到通道为空；这时任何接收操作会立即完成，同时获取到第一个通道元素类型对应的零值。</p>
+<p>调用内置的 close 函数来关闭通道：</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#658b00">close</span>(ch)
+</code></pre></div><p>使用简单的 make 调用创建的通道叫<strong>无缓冲通道</strong>（unbuffered），但 make 还可以接收第二个可选参数，一个表示通道容量的整数。如果容量是 0，make 创建一个无缓冲通道</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">ch = <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#00688b;font-weight:bold">int</span>)	<span style="color:#228b22">// 无缓冲通道
+</span><span style="color:#228b22"></span>ch = <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#00688b;font-weight:bold">int</span>, <span style="color:#b452cd">0</span>)	<span style="color:#228b22">// 无缓冲通道
+</span><span style="color:#228b22"></span>ch = <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#00688b;font-weight:bold">int</span>, <span style="color:#b452cd">3</span>)	<span style="color:#228b22">// 容量为3的缓冲通道
+</span></code></pre></div><h4 id="121--无缓冲通道">
+  1.2.1  无缓冲通道
+  <a class="anchor" href="#121--%e6%97%a0%e7%bc%93%e5%86%b2%e9%80%9a%e9%81%93">#</a>
+</h4>
+<p>无缓冲通道上的发送操作将会阻塞，直到另一个 goroutine 在对应的通道上执行接收操作，这时值传递完毕，两个 goroutine 都可以继续执行。相反，如果接收操作先执行，接收方 goroutine 将阻塞，直到另一个 goroutine 在同一个通道上发送一个值。</p>
+<p>使用无缓冲通道进行的通信导致发送和接收 goroutine <strong>同步化</strong>。因此，无缓冲通道也称为<strong>同步通道</strong>。当一个值在无缓冲通道上传递时，接收值后发送方 goroutine 才能再次唤醒。</p></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc" style="box-sizing: unset;">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#11-goroutine">1.1 goroutine</a></li>
+            <li><a href="#12-通道">1.2 通道</a>
+              <ul>
+                <li><a href="#121--无缓冲通道">1.2.1  无缓冲通道</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

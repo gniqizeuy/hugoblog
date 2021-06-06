@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.82.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="mutagen.io
+Installation#Linuxwget https://github.com/mutagen-io/mutagen/releases/download/v0.11.8/mutagen_linux_amd64_v0.11.8.tar.gz
+tar zxvf mutagen_linux_*.tar.gz -C /usr/local/bin
+mutagen daemon start #启动
+Windowsgithub issue: issue
+download tar.gz: amd64.v0.11.8.tar.gz ; add to path
+设置 MUTAGEN_SSH_PATH 变量指向 SSH 可执行文件的目录，暂不支持 Windows 的 SSH 客户端
+采用 git for windows 注意 git 安装地址为 C: 默认地址
+将 MUTAGEN_SSH_PATH 指向 GIT_INSTALL_ROOT\usr\bin
+create session#mutagen sync create
+list session#mutagen sync session
+monitor session#mutagen sync monitor">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="mutagen" />
+<meta property="og:description" content="mutagen.io
+Installation#Linuxwget https://github.com/mutagen-io/mutagen/releases/download/v0.11.8/mutagen_linux_amd64_v0.11.8.tar.gz
+tar zxvf mutagen_linux_*.tar.gz -C /usr/local/bin
+mutagen daemon start #启动
+Windowsgithub issue: issue
+download tar.gz: amd64.v0.11.8.tar.gz ; add to path
+设置 MUTAGEN_SSH_PATH 变量指向 SSH 可执行文件的目录，暂不支持 Windows 的 SSH 客户端
+采用 git for windows 注意 git 安装地址为 C: 默认地址
+将 MUTAGEN_SSH_PATH 指向 GIT_INSTALL_ROOT\usr\bin
+create session#mutagen sync create
+list session#mutagen sync session
+monitor session#mutagen sync monitor" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/soft/mutagen/" /><meta property="article:section" content="docs" />
+
+
+
+<title>mutagen | gniqizeuy blog</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2bc2364a4a4b31f0ec1debecf0a8f90a840821f143dfe1ac6a0f7cbcbdcf64ac.css" integrity="sha256-K8I2SkpLMfDsHevs8Kj5CoQIIfFD3&#43;Gsag98vL3PZKw=">
+<script defer src="/en.search.min.c2d55c7b23ae6f2622705093e885d18733c13f0fbaec6d8a2b86741537af32fc.js" integrity="sha256-wtVceyOubyYicFCT6IXRhzPBPw&#43;67G2KK4Z0FTevMvw="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>gniqizeuy blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/" class="">shortcodes</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="http://example.org/docs/shortcodes/section/" class="">Section</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page1/" class="">Page1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page2/" class="">Page2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-77bacf5307705b0e9e80c2f6765b680f" class="toggle"  />
+    <label for="section-77bacf5307705b0e9e80c2f6765b680f" class="flex justify-between">
+      <a  class="">Vue</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/vue/other/" class="">other</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/vue/proxy/" class="">proxy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a16130a6c009a6b080cd08ba4c28b6ed" class="toggle"  />
+    <label for="section-a16130a6c009a6b080cd08ba4c28b6ed" class="flex justify-between">
+      <a  class="">Go</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-time/" class="">go time</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-function/" class="">go function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-interface/" class="">go interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-goroutine-channel/" class="">go goroutine channel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-summary/" class="">go summary</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-composite-data/" class="">go composite data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-10d41b0387e5bda7e9958b9b5ece051e" class="toggle"  />
+    <label for="section-10d41b0387e5bda7e9958b9b5ece051e" class="flex justify-between">
+      <a  class="">Docker</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/docker/docker-cmd/" class="">docker command</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f02ded928a5d77bc31b203aa8a8d4857" class="toggle" checked />
+    <label for="section-f02ded928a5d77bc31b203aa8a8d4857" class="flex justify-between">
+      <a  class="">Soft</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/centos-git/" class="">centos update git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/docker-time/" class="">docker timezone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/hugo-install/" class="">hugo install</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/mutagen/" class=" active">mutagen</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/protobuf-install/" class="">protobuf install</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/ssh/" class="">ssh</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/vs-code-remote/" class="">vscode remote</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>mutagen</strong>
+
+  <label for="toc-control">
+    
+  </label>
+</div>
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><p><a href="https://mutagen.io/">mutagen.io</a></p>
+<h4 id="installation">
+  Installation
+  <a class="anchor" href="#installation">#</a>
+</h4>
+
+
+
+
+<div class="book-tabs"><input type="radio" class="toggle" name="tabs-uniqueid" id="tabs-uniqueid-0" checked="checked" />
+  <label for="tabs-uniqueid-0">Linux</label>
+  <div class="book-tabs-content markdown-inner"><p><code>wget https://github.com/mutagen-io/mutagen/releases/download/v0.11.8/mutagen_linux_amd64_v0.11.8.tar.gz</code></p>
+<p><code>tar zxvf mutagen_linux_*.tar.gz -C /usr/local/bin</code></p>
+<p><code>mutagen daemon start</code> #启动</p>
+</div><input type="radio" class="toggle" name="tabs-uniqueid" id="tabs-uniqueid-1"  />
+  <label for="tabs-uniqueid-1">Windows</label>
+  <div class="book-tabs-content markdown-inner"><p>github issue: <a href="https://github.com/NixOS/nixpkgs/issues/81219">issue</a></p>
+<p>download tar.gz: <a href="https://github.com/mutagen-io/mutagen/releases/download/v0.11.8/mutagen_windows_amd64_v0.11.8.tar.gz">amd64.v0.11.8.tar.gz</a> ; add to path</p>
+<p>设置 <code>MUTAGEN_SSH_PATH</code> 变量指向 SSH 可执行文件的目录，暂不支持 Windows 的 SSH 客户端</p>
+<p>采用 git for windows 注意 git 安装地址为 C: 默认地址</p>
+<p>将 <code>MUTAGEN_SSH_PATH</code> 指向 <code>GIT_INSTALL_ROOT\usr\bin</code></p>
+</div></div>
+
+<h4 id="create-session">
+  create session
+  <a class="anchor" href="#create-session">#</a>
+</h4>
+<p><code>mutagen sync create</code></p>
+<h4 id="list-session">
+  list session
+  <a class="anchor" href="#list-session">#</a>
+</h4>
+<p><code>mutagen sync session</code></p>
+<h4 id="monitor-session">
+  monitor session
+  <a class="anchor" href="#monitor-session">#</a>
+</h4>
+<p><code>mutagen sync monitor</code></p>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Go on gniqizeuy blog</title>
+    <link>http://example.org/categories/go/</link>
+    <description>Recent content in Go on gniqizeuy blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 17 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/categories/go/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>go time</title>
+      <link>http://example.org/docs/go/go-time/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/go/go-time/</guid>
+      <description>import ( &amp;#34;database/sql/driver&amp;#34; &amp;#34;fmt&amp;#34; &amp;#34;time&amp;#34; ) // Time 继承 time.Time 的所有方法，并重写 MarshalJSON 方法， // Time 进行 json 序列化时，会转为字符串 &amp;#34;2006-01-02 15:04:05&amp;#34; 的格式。 type Time struct { time.Time } // MarshalJSON 将 Time 类型转为 &amp;#34;2006-01-02&amp;#34; 格式。 func (t Time) MarshalJSON() (data []byte, err error) { layout := &amp;#34;2006-01-02&amp;#34; data = make([]byte, 0, len(layout)+2) data = append(data, &amp;#39;&amp;#34;&amp;#39;) data = t.AppendFormat(data, layout) data = append(data, &amp;#39;&amp;#34;&amp;#39;) return } func (t *Time) UnmarshalJSON(data []byte) error { // Ignore null, like in the main JSON package.</description>
+    </item>
+    
+    <item>
+      <title>go function</title>
+      <link>http://example.org/docs/go/go-function/</link>
+      <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/go/go-function/</guid>
+      <description>方法声明#与声明普通函数类似，只是在函数名字前面多一个参数，参数把这个方法绑定到这个参数对应的类型上
+附加的参数称为方法的接收者
+package geometry import &amp;#34;math&amp;#34; type Point struct{ X, Y float64 } // 普通函数 func Distance(p, q Point) float64 { return math.Hypot(q.X-p.X, q.Y-p,Y) } // Point 类型方法 func (p Point) Distance(q point) float64 { return math.Hypot(q.X-p.X, q.Y-p,Y) } go 中接收者不使用特殊名（this 或 self）；而是我们自己选择接收者名字。通常取类型名称的首字符
+p := Point{1, 2} q := Point{4, 6} fmt.Println(Distance(p, q)) fmt.Println(p.Distance(q)) 上述两个 Distance 函数声明没有冲突，第一个是包级别的函数（称为 geometry.Distance）。第二个声明一个类型 Point 的方法（Point.Distance）
+表达式 p.Distance 称作选择子（selector）因为它为接收者 p 选择合适的 Distance 方法。选择子也作用于选择结构类型中的字段值，由于方法与字段来自同一个命名空间，同名的字段与方法，编译器会报错。</description>
+    </item>
+    
+    <item>
+      <title>go interface</title>
+      <link>http://example.org/docs/go/go-interface/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/go/go-interface/</guid>
+      <description>接口类型是对其他类型行为的概括与抽象。使用接口写出更加灵活和通用的函数，这些函数不用绑定在一个特定的类型实现上。
+ go 接口独特于隐式实现。对于具体类型，无须声明实现哪些接口，只要提供接口方法。这种设计让你无须改变已有类型的实现，就可为类型创建新的接口，对于不能修改包的类型，特别有用。
+具体类型与接口类型
+具体类型：数据及操作，通过其方法来提供额外的能力。是什么，能干什么
+接口类型：一种抽象类型，仅包含方法。即能做什么。
+标准库中的例子↕fmt.Pintf和fmt.Sprintf前者把结果发送到标准输出（其实是一个文件），后者把结构以string类型返回。
+格式化是两个函数中最复杂的部分，将格式化以接口的形式抽出。（其实两个函数都封装了第三个函数fmt.Fprintf）
+package fmt func Fprintf(w io.Writer, format string, args ...interface{}) (int, error) func Printf(format string,args ...interface{}) (int, error) { return Fprintf(os.Stdout, format, args...) } func Sprintf(format string, args ...interface{}) string { var buf bytes.Buffer Fprintf(&amp;amp;buf, format, args...) return buf.String() } 类型断言#作用于接口上，写法类似于x.T()，x 指接口类型表达式，T 是一个类型（称为断言类型）。
+类型断言检查作为操作数的动态类型是否满足指定的断言类型
+类型断言检查一般有两种可能
+断言类型 T 是具体类型
+类型断言检查 x 的动态类型是否就是 T，检查成功，类型断言结果就是 x 的动态值，即 T 类型。</description>
+    </item>
+    
+    <item>
+      <title>go goroutine channel</title>
+      <link>http://example.org/docs/go/go-goroutine-channel/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/go/go-goroutine-channel/</guid>
+      <description>&lt;p&gt;Go 有两种并发编程的风格。goroutine 和 通道，以及共享内存多线程的传统模型&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>go summary</title>
+      <link>http://example.org/docs/go/go-summary/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/go/go-summary/</guid>
+      <description>&lt;p&gt;有关 go 的一些自我总结&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>go composite data</title>
+      <link>http://example.org/docs/go/go-composite-data/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/go/go-composite-data/</guid>
+      <description>&lt;h2 id=&#34;复合数据类型&#34;&gt;
+  复合数据类型
+  &lt;a class=&#34;anchor&#34; href=&#34;#%e5%a4%8d%e5%90%88%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;复合数据类型是由基本数据类型以各种方式组合而构成的&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

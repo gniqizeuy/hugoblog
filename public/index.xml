@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Introduction on gniqizeuy blog</title>
+    <link>http://example.org/</link>
+    <description>Recent content in Introduction on gniqizeuy blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>other</title>
+      <link>http://example.org/docs/vue/other/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/vue/other/</guid>
+      <description>vue-cli3 控制台network存在 info#服务端：sockjs-node
+客户端：sockjs-clien
+如果你的项目没有用到 sockjs，vuecli3 运行 npm run serve 之后 network 里面一直一个接口：http://localhost:8080/sockjs-node/info?t=1462183700002
+关闭info#1.找到/node_modules/sockjs-client/dist/sockjs.js
+2.注释下面代码
+try { // self.xhr.send(payload);  } catch (e) { self.emit(&amp;#39;finish&amp;#39;, 0, &amp;#39;&amp;#39;); self._cleanup(false); } </description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>http://example.org/docs/vue/proxy/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/vue/proxy/</guid>
+      <description>vue 查看代理请求的真实地址#在文件 vue.config.js 文件里面找到 proxyTable 添加配置。
+&amp;#39;/api&amp;#39;: { traget: url, changeOrigin: true loglevel: &amp;#39;debug&amp;#39; } </description>
+    </item>
+    
+    <item>
+      <title>go time</title>
+      <link>http://example.org/docs/go/go-time/</link>
+      <pubDate>Mon, 17 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/go/go-time/</guid>
+      <description>import ( &amp;#34;database/sql/driver&amp;#34; &amp;#34;fmt&amp;#34; &amp;#34;time&amp;#34; ) // Time 继承 time.Time 的所有方法，并重写 MarshalJSON 方法， // Time 进行 json 序列化时，会转为字符串 &amp;#34;2006-01-02 15:04:05&amp;#34; 的格式。 type Time struct { time.Time } // MarshalJSON 将 Time 类型转为 &amp;#34;2006-01-02&amp;#34; 格式。 func (t Time) MarshalJSON() (data []byte, err error) { layout := &amp;#34;2006-01-02&amp;#34; data = make([]byte, 0, len(layout)+2) data = append(data, &amp;#39;&amp;#34;&amp;#39;) data = t.AppendFormat(data, layout) data = append(data, &amp;#39;&amp;#34;&amp;#39;) return } func (t *Time) UnmarshalJSON(data []byte) error { // Ignore null, like in the main JSON package.</description>
+    </item>
+    
+    <item>
+      <title>go function</title>
+      <link>http://example.org/docs/go/go-function/</link>
+      <pubDate>Sun, 02 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/go/go-function/</guid>
+      <description>方法声明#与声明普通函数类似，只是在函数名字前面多一个参数，参数把这个方法绑定到这个参数对应的类型上
+附加的参数称为方法的接收者
+package geometry import &amp;#34;math&amp;#34; type Point struct{ X, Y float64 } // 普通函数 func Distance(p, q Point) float64 { return math.Hypot(q.X-p.X, q.Y-p,Y) } // Point 类型方法 func (p Point) Distance(q point) float64 { return math.Hypot(q.X-p.X, q.Y-p,Y) } go 中接收者不使用特殊名（this 或 self）；而是我们自己选择接收者名字。通常取类型名称的首字符
+p := Point{1, 2} q := Point{4, 6} fmt.Println(Distance(p, q)) fmt.Println(p.Distance(q)) 上述两个 Distance 函数声明没有冲突，第一个是包级别的函数（称为 geometry.Distance）。第二个声明一个类型 Point 的方法（Point.Distance）
+表达式 p.Distance 称作选择子（selector）因为它为接收者 p 选择合适的 Distance 方法。选择子也作用于选择结构类型中的字段值，由于方法与字段来自同一个命名空间，同名的字段与方法，编译器会报错。</description>
+    </item>
+    
+    <item>
+      <title>go interface</title>
+      <link>http://example.org/docs/go/go-interface/</link>
+      <pubDate>Wed, 21 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/go/go-interface/</guid>
+      <description>接口类型是对其他类型行为的概括与抽象。使用接口写出更加灵活和通用的函数，这些函数不用绑定在一个特定的类型实现上。
+ go 接口独特于隐式实现。对于具体类型，无须声明实现哪些接口，只要提供接口方法。这种设计让你无须改变已有类型的实现，就可为类型创建新的接口，对于不能修改包的类型，特别有用。
+具体类型与接口类型
+具体类型：数据及操作，通过其方法来提供额外的能力。是什么，能干什么
+接口类型：一种抽象类型，仅包含方法。即能做什么。
+标准库中的例子↕fmt.Pintf和fmt.Sprintf前者把结果发送到标准输出（其实是一个文件），后者把结构以string类型返回。
+格式化是两个函数中最复杂的部分，将格式化以接口的形式抽出。（其实两个函数都封装了第三个函数fmt.Fprintf）
+package fmt func Fprintf(w io.Writer, format string, args ...interface{}) (int, error) func Printf(format string,args ...interface{}) (int, error) { return Fprintf(os.Stdout, format, args...) } func Sprintf(format string, args ...interface{}) string { var buf bytes.Buffer Fprintf(&amp;amp;buf, format, args...) return buf.String() } 类型断言#作用于接口上，写法类似于x.T()，x 指接口类型表达式，T 是一个类型（称为断言类型）。
+类型断言检查作为操作数的动态类型是否满足指定的断言类型
+类型断言检查一般有两种可能
+断言类型 T 是具体类型
+类型断言检查 x 的动态类型是否就是 T，检查成功，类型断言结果就是 x 的动态值，即 T 类型。</description>
+    </item>
+    
+    <item>
+      <title>docker command</title>
+      <link>http://example.org/docs/docker/docker-cmd/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/docker/docker-cmd/</guid>
+      <description>Docker 子命令分类#   子命令分类 子命令     Docker 环境信息 info、version   容器生命周期管理 Create、exec、kill、pause、restart、rm、run、start、stop、unpause   镜像仓库命令 login、logout、pull、push、search   镜像管理 build、images、import、load、rmi、save、tag、commit   容器运维操作 attach、export、inspect、port、ps、rename、stats、top、wait、cp、diff、update   容器资源管理 volume、network   系统日志信息 events、history、logs    docker ps 命令
+docker ps 命令可以查看容器的相关信息，默认只显示只在运行的容器的信息，
+可以查看到的信息包括
+ CONTAINER ID NAMES IMAGE STATUS 容器启动后执行的 COMMAND 创建时间 CREATED 绑定的端口 PORTS  docker ps 命令最常用的功能就是查看容器的 CONTAINER ID，以便对特定容器进行操作
+docker ps [OPTIONS] 常用的选项有 -a 和 -l。</description>
+    </item>
+    
+    <item>
+      <title>go goroutine channel</title>
+      <link>http://example.org/docs/go/go-goroutine-channel/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/go/go-goroutine-channel/</guid>
+      <description>&lt;p&gt;Go 有两种并发编程的风格。goroutine 和 通道，以及共享内存多线程的传统模型&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>go summary</title>
+      <link>http://example.org/docs/go/go-summary/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/go/go-summary/</guid>
+      <description>&lt;p&gt;有关 go 的一些自我总结&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>go composite data</title>
+      <link>http://example.org/docs/go/go-composite-data/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/go/go-composite-data/</guid>
+      <description>&lt;h2 id=&#34;复合数据类型&#34;&gt;
+  复合数据类型
+  &lt;a class=&#34;anchor&#34; href=&#34;#%e5%a4%8d%e5%90%88%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;复合数据类型是由基本数据类型以各种方式组合而构成的&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Mysql tuning</title>
+      <link>http://example.org/posts/mysql-tuning/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/mysql-tuning/</guid>
+      <description>&lt;h2 id=&#34;schema-与-数据类型优化&#34;&gt;
+  Schema 与 数据类型优化
+  &lt;a class=&#34;anchor&#34; href=&#34;#schema-%e4%b8%8e-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%bc%98%e5%8c%96&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;良好的&lt;strong&gt;逻辑设计&lt;/strong&gt;和&lt;strong&gt;物理设计&lt;/strong&gt;是高性能的基石，应该根据系统将要执行的&lt;strong&gt;查询语句&lt;/strong&gt;来设计 schema&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Spring Security</title>
+      <link>http://example.org/posts/spring-security/</link>
+      <pubDate>Fri, 02 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/spring-security/</guid>
+      <description>&lt;p&gt;dfadsfa&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/shortcodes/section/page1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/shortcodes/section/page1/</guid>
+      <description>Page 1#</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/docs/shortcodes/section/page2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/shortcodes/section/page2/</guid>
+      <description>Page 2#</description>
+    </item>
+    
+    <item>
+      <title>centos update git</title>
+      <link>http://example.org/docs/soft/centos-git/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/centos-git/</guid>
+      <description>系统自带 git 版本较低
+卸载旧版本的Git
+yum remove git -y 要升级Git，首先要安装一些依赖包； 安装基本的依赖包
+yum install curl-devel expat-devel gettext-devel openssl-devel zlib-devel nss gcc perl-ExtUtils-MakeMaker -y 下载最新的git源码包：
+https://mirrors.edge.kernel.org/pub/software/scm/git/ 解压、编译安装：
+wget https://mirrors.edge.kernel.org/pub/software/scm/git/git-2.9.5.tar.xz tar xf git-2.9.5.tar.xz cd git-2.9.5 ./configure --prefix=/usr/local/git make &amp;amp;&amp;amp; make install 配置环境变量：
+export PATH=$PATH:/usr/local/git/bin source /etc/profile 查看版本
+git version git version 2.9.5  注意：但是如果缺少了nss包的话，在拉取以https开头的URL地址时就会有以下的几个异常信息；
+ fatal: Unable to find remote helper for ‘https’fatal: unable to access ‘https://github.com/fatih/vim-go.git/‘: SSL connect error 可以执行安装:</description>
+    </item>
+    
+    <item>
+      <title>docker timezone</title>
+      <link>http://example.org/docs/soft/docker-time/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/docker-time/</guid>
+      <description>查看容器时间
+docker exec -it xxx date 查看本地时区文件
+ls -l /etc/localtime 拷贝本地时区文件
+docker cp xxx xxx:/etc/localtime </description>
+    </item>
+    
+    <item>
+      <title>hugo install</title>
+      <link>http://example.org/docs/soft/hugo-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/hugo-install/</guid>
+      <description>使用 yum 安装 hugo
+新建 hugo.repo 文件, 访问 https://copr.fedorainfracloud.org/coprs/daftaupe/hugo/ 选择合适版本
+vim /etc/yum.repos.d/hugo.repo 更新 yum
+yum upgrade 安装 hugo
+yum install hugo </description>
+    </item>
+    
+    <item>
+      <title>mutagen</title>
+      <link>http://example.org/docs/soft/mutagen/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/mutagen/</guid>
+      <description>mutagen.io
+Installation#Linuxwget https://github.com/mutagen-io/mutagen/releases/download/v0.11.8/mutagen_linux_amd64_v0.11.8.tar.gz
+tar zxvf mutagen_linux_*.tar.gz -C /usr/local/bin
+mutagen daemon start #启动
+Windowsgithub issue: issue
+download tar.gz: amd64.v0.11.8.tar.gz ; add to path
+设置 MUTAGEN_SSH_PATH 变量指向 SSH 可执行文件的目录，暂不支持 Windows 的 SSH 客户端
+采用 git for windows 注意 git 安装地址为 C: 默认地址
+将 MUTAGEN_SSH_PATH 指向 GIT_INSTALL_ROOT\usr\bin
+create session#mutagen sync create
+list session#mutagen sync session
+monitor session#mutagen sync monitor</description>
+    </item>
+    
+    <item>
+      <title>protobuf install</title>
+      <link>http://example.org/docs/soft/protobuf-install/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/protobuf-install/</guid>
+      <description>新版本
+google protobuf-3.6.1是现在最新版本，添加了新的特性，看说明
+下载地址 https://github.com/protocolbuffers/protobuf/releases
+我下载的是protobuf-all-3.6.1.tar.gz 包
+新版本不需要执行autogen.sh脚本，直接./configure就行
+tar zvxf protobuf-all-3.6.1.tar.gzcd protobuf-3.6.1./configure –prefix=/usr/local/sudo make # 要编译很久sudo make checksudo make install 编译安装protobuf的编译器protoc
+wget https://github.com/google/protobuf/releases/download/v3.6.1/protobuf-all-3.6.1.tar.gztar zxvf protobuf-all-3.6.1.tar.gz./autogen.sh./configuremakemake install 错误处理
+1、./autogen.sh执行报错./autogen.sh: line 38: autoreconf: command not found
+安装autoconf和automakeyum -y install gcc automake autoconf libtool make安装g++:yum install gcc gcc-c++ </description>
+    </item>
+    
+    <item>
+      <title>ssh</title>
+      <link>http://example.org/docs/soft/ssh/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/ssh/</guid>
+      <description>ssh 服务异常#ssh failed to start OpenSSH Server daemon
+sshd -t 提示服务无法加载ssh_host_rsa_key,ssh_host_ecdsa_key 推测估计是权限问题
+尝试以下方法
+chmod 600 /etc/ssh/ssh_host_rsa_key chmod 600 /etc/ssh/ssh_host_ecdsa_ke service sshd star # 方法2：或者尝试操作如下 chown -R root.root /var/empty/sshd chmod 744 /var/empty/sshd service sshd restart </description>
+    </item>
+    
+    <item>
+      <title>vscode remote</title>
+      <link>http://example.org/docs/soft/vs-code-remote/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/soft/vs-code-remote/</guid>
+      <description>安装 remote-ssh 插件
+配置免密登录
+打开git bash 执行 ssh-keygen 命令
+生成文件在 ~/.ssh 下
+id_rsa id_rsa.pub私钥 公钥 使用 ssh-copy-id 命令添加本机密钥
+ssh-copy-id &amp;lt;user&amp;gt;@&amp;lt;host&amp;gt; 编辑 C:\User\xxx.ssh\config
+Host centos # 服务器名称HostName xxx # 远程服务器的 IP 地址或域名User xxx # 用户名IdentityFile xxx # 私钥路径 </description>
+    </item>
+    
+  </channel>
+</rss>

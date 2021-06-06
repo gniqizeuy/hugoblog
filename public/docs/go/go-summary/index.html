@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.82.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="go 的自我总结">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="go summary" />
+<meta property="og:description" content="go 的自我总结" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/go/go-summary/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-04-19T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-04-19T00:00:00&#43;00:00" />
+
+<title>go summary | gniqizeuy blog</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2bc2364a4a4b31f0ec1debecf0a8f90a840821f143dfe1ac6a0f7cbcbdcf64ac.css" integrity="sha256-K8I2SkpLMfDsHevs8Kj5CoQIIfFD3&#43;Gsag98vL3PZKw=">
+<script defer src="/en.search.min.c2d55c7b23ae6f2622705093e885d18733c13f0fbaec6d8a2b86741537af32fc.js" integrity="sha256-wtVceyOubyYicFCT6IXRhzPBPw&#43;67G2KK4Z0FTevMvw="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>gniqizeuy blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/" class="">shortcodes</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="http://example.org/docs/shortcodes/section/" class="">Section</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page1/" class="">Page1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page2/" class="">Page2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-77bacf5307705b0e9e80c2f6765b680f" class="toggle"  />
+    <label for="section-77bacf5307705b0e9e80c2f6765b680f" class="flex justify-between">
+      <a  class="">Vue</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/vue/other/" class="">other</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/vue/proxy/" class="">proxy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a16130a6c009a6b080cd08ba4c28b6ed" class="toggle" checked />
+    <label for="section-a16130a6c009a6b080cd08ba4c28b6ed" class="flex justify-between">
+      <a  class="">Go</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-time/" class="">go time</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-function/" class="">go function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-interface/" class="">go interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-goroutine-channel/" class="">go goroutine channel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-summary/" class=" active">go summary</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-composite-data/" class="">go composite data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-10d41b0387e5bda7e9958b9b5ece051e" class="toggle"  />
+    <label for="section-10d41b0387e5bda7e9958b9b5ece051e" class="flex justify-between">
+      <a  class="">Docker</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/docker/docker-cmd/" class="">docker command</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f02ded928a5d77bc31b203aa8a8d4857" class="toggle"  />
+    <label for="section-f02ded928a5d77bc31b203aa8a8d4857" class="flex justify-between">
+      <a  class="">Soft</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/centos-git/" class="">centos update git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/docker-time/" class="">docker timezone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/hugo-install/" class="">hugo install</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/mutagen/" class="">mutagen</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/protobuf-install/" class="">protobuf install</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/ssh/" class="">ssh</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/vs-code-remote/" class="">vscode remote</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>go summary</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1-函数">1 函数</a>
+              <ul>
+                <li><a href="#11-内置函数-make">1.1 内置函数 make</a></li>
+              </ul>
+            </li>
+            <li><a href="#2-比较">2. 比较</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><p>有关 go 的一些自我总结</p>
+<h3 id="1-函数">
+  1 函数
+  <a class="anchor" href="#1-%e5%87%bd%e6%95%b0">#</a>
+</h3>
+<h4 id="11-内置函数-make">
+  1.1 内置函数 make
+  <a class="anchor" href="#11-%e5%86%85%e7%bd%ae%e5%87%bd%e6%95%b0-make">#</a>
+</h4>
+<div class="book-columns flex flex-wrap">
+  
+  <div class="flex-even markdown-inner">
+    <p>创建 map</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// 创建一个从 string 到 int 的 map
+</span><span style="color:#228b22"></span>ages := <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">map</span>[<span style="color:#00688b;font-weight:bold">string</span>]<span style="color:#00688b;font-weight:bold">int</span>)	
+</code></pre></div>
+  </div>
+  
+  <div class="flex-even markdown-inner">
+    <p>创建通道</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#228b22">// ch 的类型是 &#39;chan int&#39;
+</span><span style="color:#228b22"></span>ch := <span style="color:#658b00">make</span>(<span style="color:#8b008b;font-weight:bold">chan</span> <span style="color:#00688b;font-weight:bold">int</span>)
+</code></pre></div>
+  </div>
+  
+</div>
+
+<p>创建 slice（指定元素类型，长度和容量）</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#658b00">make</span>([]T, len)	<span style="color:#228b22">// 省略容量参数，slice 的长度和容量相等
+</span><span style="color:#228b22"></span><span style="color:#658b00">make</span>([]T, len, cap)	<span style="color:#228b22">// 等同于 make([]T, cap)[:len]
+</span></code></pre></div><details >
+  <summary>代码解释</summary>
+  <div class="markdown-inner">
+    其实，make 创建了一个无名数组并返回了它的一个 slice；这个数组仅可以通过这个 slice 来访问。<br>
+第一行代码返回的 slice 引用了整个数组。<br>
+第二行中，slice 只引用了数组的前 len 个元素，但是它的容量是数组的长度，这为未来的 slice 元素留出空间。
+  </div>
+</details>
+
+<h3 id="2-比较">
+  2. 比较
+  <a class="anchor" href="#2-%e6%af%94%e8%be%83">#</a>
+</h3></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc" style="box-sizing: unset;">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#1-函数">1 函数</a>
+              <ul>
+                <li><a href="#11-内置函数-make">1.1 内置函数 make</a></li>
+              </ul>
+            </li>
+            <li><a href="#2-比较">2. 比较</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.82.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="vue-cli3 控制台network存在 info#服务端：sockjs-node
+客户端：sockjs-clien
+如果你的项目没有用到 sockjs，vuecli3 运行 npm run serve 之后 network 里面一直一个接口：http://localhost:8080/sockjs-node/info?t=1462183700002
+关闭info#1.找到/node_modules/sockjs-client/dist/sockjs.js
+2.注释下面代码
+try { // self.xhr.send(payload);  } catch (e) { self.emit(&#39;finish&#39;, 0, &#39;&#39;); self._cleanup(false); } ">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="other" />
+<meta property="og:description" content="vue-cli3 控制台network存在 info#服务端：sockjs-node
+客户端：sockjs-clien
+如果你的项目没有用到 sockjs，vuecli3 运行 npm run serve 之后 network 里面一直一个接口：http://localhost:8080/sockjs-node/info?t=1462183700002
+关闭info#1.找到/node_modules/sockjs-client/dist/sockjs.js
+2.注释下面代码
+try { // self.xhr.send(payload);  } catch (e) { self.emit(&#39;finish&#39;, 0, &#39;&#39;); self._cleanup(false); } " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/vue/other/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-05-20T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-05-20T00:00:00&#43;00:00" />
+
+<title>other | gniqizeuy blog</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2bc2364a4a4b31f0ec1debecf0a8f90a840821f143dfe1ac6a0f7cbcbdcf64ac.css" integrity="sha256-K8I2SkpLMfDsHevs8Kj5CoQIIfFD3&#43;Gsag98vL3PZKw=">
+<script defer src="/en.search.min.c2d55c7b23ae6f2622705093e885d18733c13f0fbaec6d8a2b86741537af32fc.js" integrity="sha256-wtVceyOubyYicFCT6IXRhzPBPw&#43;67G2KK4Z0FTevMvw="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>gniqizeuy blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/" class="">shortcodes</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="http://example.org/docs/shortcodes/section/" class="">Section</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page1/" class="">Page1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page2/" class="">Page2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-77bacf5307705b0e9e80c2f6765b680f" class="toggle" checked />
+    <label for="section-77bacf5307705b0e9e80c2f6765b680f" class="flex justify-between">
+      <a  class="">Vue</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/vue/other/" class=" active">other</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/vue/proxy/" class="">proxy</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a16130a6c009a6b080cd08ba4c28b6ed" class="toggle"  />
+    <label for="section-a16130a6c009a6b080cd08ba4c28b6ed" class="flex justify-between">
+      <a  class="">Go</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-time/" class="">go time</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-function/" class="">go function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-interface/" class="">go interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-goroutine-channel/" class="">go goroutine channel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-summary/" class="">go summary</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/go/go-composite-data/" class="">go composite data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-10d41b0387e5bda7e9958b9b5ece051e" class="toggle"  />
+    <label for="section-10d41b0387e5bda7e9958b9b5ece051e" class="flex justify-between">
+      <a  class="">Docker</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/docker/docker-cmd/" class="">docker command</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f02ded928a5d77bc31b203aa8a8d4857" class="toggle"  />
+    <label for="section-f02ded928a5d77bc31b203aa8a8d4857" class="flex justify-between">
+      <a  class="">Soft</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/centos-git/" class="">centos update git</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/docker-time/" class="">docker timezone</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/hugo-install/" class="">hugo install</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/mutagen/" class="">mutagen</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/protobuf-install/" class="">protobuf install</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/ssh/" class="">ssh</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/vs-code-remote/" class="">vscode remote</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>other</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#vue-cli3-控制台network存在-info">vue-cli3 控制台network存在 info</a>
+              <ul>
+                <li><a href="#关闭info">关闭info</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h3 id="vue-cli3-控制台network存在-info">
+  vue-cli3 控制台network存在 info
+  <a class="anchor" href="#vue-cli3-%e6%8e%a7%e5%88%b6%e5%8f%b0network%e5%ad%98%e5%9c%a8-info">#</a>
+</h3>
+<p>服务端：<a href="https://github.com/sockjs/sockjs-node">sockjs-node</a><br>
+客户端：<a href="https://github.com/sockjs/sockjs-client">sockjs-clien</a></p>
+<p>如果你的项目没有用到 sockjs，vuecli3 运行 npm run serve 之后 network 里面一直一个接口：http://localhost:8080/sockjs-node/info?t=1462183700002</p>
+<h4 id="关闭info">
+  关闭info
+  <a class="anchor" href="#%e5%85%b3%e9%97%adinfo">#</a>
+</h4>
+<p>1.找到/node_modules/sockjs-client/dist/sockjs.js</p>
+<p>2.注释下面代码</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">    <span style="color:#8b008b;font-weight:bold">try</span> {
+    <span style="color:#228b22">//  self.xhr.send(payload);
+</span><span style="color:#228b22"></span>    } <span style="color:#8b008b;font-weight:bold">catch</span> (e) {
+    self.emit(<span style="color:#cd5555">&#39;finish&#39;</span>, <span style="color:#b452cd">0</span>, <span style="color:#cd5555">&#39;&#39;</span>);
+    self._cleanup(<span style="color:#8b008b;font-weight:bold">false</span>);
+    }
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc" style="box-sizing: unset;">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#vue-cli3-控制台network存在-info">vue-cli3 控制台network存在 info</a>
+              <ul>
+                <li><a href="#关闭info">关闭info</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

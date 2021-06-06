@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.82.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="go 接口">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="go interface" />
+<meta property="og:description" content="go 接口" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/code/go/go-interface/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-04-21T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-04-21T00:00:00&#43;00:00" />
+
+<title>go interface | gniqizeuy blog</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2bc2364a4a4b31f0ec1debecf0a8f90a840821f143dfe1ac6a0f7cbcbdcf64ac.css" integrity="sha256-K8I2SkpLMfDsHevs8Kj5CoQIIfFD3&#43;Gsag98vL3PZKw=">
+<script defer src="/en.search.min.4085529fd83db486b5fa7023e8eee52fe1ef2e55a9e9e91617f11ce5f30c1870.js" integrity="sha256-QIVSn9g9tIa1&#43;nAj6O7lL&#43;HvLlWp6ekWF/Ec5fMMGHA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>gniqizeuy blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4e46b01272d410b3a99461d79326ddf4" class="toggle"  />
+    <label for="section-4e46b01272d410b3a99461d79326ddf4" class="flex justify-between">
+      <a  class="">Collapsed</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/" class="">shortcodes</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="http://example.org/docs/shortcodes/section/" class="">Section</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page1/" class="">Page1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page2/" class="">Page2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Code</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-047407c19369f386be2464cbd25c7847" class="toggle" checked />
+    <label for="section-047407c19369f386be2464cbd25c7847" class="flex justify-between">
+      <a  class="">Go</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/code/go/go-function/" class="">go function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/code/go/go-interface/" class=" active">go interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/code/go/go-goroutine-channel/" class="">go goroutine channel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/code/go/go-summary/" class="">go summary</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/code/go/go-composite-data/" class="">go composite data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Soft</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/go-composite-data/" class="">protobuf install</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>go interface</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#类型断言">类型断言</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><blockquote>
+<p>接口类型是对其他类型<strong>行为</strong>的概括与抽象。使用接口写出更加灵活和通用的函数，这些函数不用绑定在一个特定的类型实现上。</p>
+</blockquote>
+<p>go 接口独特于<strong>隐式实现</strong>。对于具体类型，无须声明实现哪些接口，只要提供接口方法。这种设计让你无须改变已有类型的实现，就可为类型创建新的接口，对于不能修改包的类型，特别有用。</p>
+<p><strong>具体类型与接口类型</strong></p>
+<p><em>具体类型</em>：数据及操作，通过其方法来提供额外的能力。是什么，能干什么</p>
+<p><em>接口类型</em>：一种<strong>抽象类型</strong>，仅包含方法。即能做什么。</p>
+
+<div class="book-expand">
+  <label>
+    <div class="book-expand-head flex justify-between">
+      <span>标准库中的例子</span>
+      <span>↕</span>
+    </div>
+    <input type="checkbox" class="hidden" />
+    <div class="book-expand-content markdown-inner">
+      <p><code>fmt.Pintf</code>和<code>fmt.Sprintf</code>前者把结果发送到标准输出（其实是一个文件），后者把结构以string类型返回。</p>
+<p>格式化是两个函数中最复杂的部分，将格式化以接口的形式抽出。（其实两个函数都封装了第三个函数<code>fmt.Fprintf</code>）</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">package</span> fmt
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">Fprintf</span>(w io.Writer, format <span style="color:#00688b;font-weight:bold">string</span>, args ...<span style="color:#8b008b;font-weight:bold">interface</span>{}) (<span style="color:#00688b;font-weight:bold">int</span>, <span style="color:#00688b;font-weight:bold">error</span>)
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">Printf</span>(format <span style="color:#00688b;font-weight:bold">string</span>,args ...<span style="color:#8b008b;font-weight:bold">interface</span>{}) (<span style="color:#00688b;font-weight:bold">int</span>, <span style="color:#00688b;font-weight:bold">error</span>) {
+    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#008b45">Fprintf</span>(os.Stdout, format, args...)
+}
+
+<span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">Sprintf</span>(format <span style="color:#00688b;font-weight:bold">string</span>, args ...<span style="color:#8b008b;font-weight:bold">interface</span>{}) <span style="color:#00688b;font-weight:bold">string</span> {
+    <span style="color:#8b008b;font-weight:bold">var</span> buf bytes.Buffer
+    <span style="color:#008b45">Fprintf</span>(&amp;buf, format, args...)
+    <span style="color:#8b008b;font-weight:bold">return</span> buf.<span style="color:#008b45">String</span>()
+}
+</code></pre></div>
+    </div>
+  </label>
+</div>
+
+<h4 id="类型断言">
+  类型断言
+  <a class="anchor" href="#%e7%b1%bb%e5%9e%8b%e6%96%ad%e8%a8%80">#</a>
+</h4>
+<p>作用于接口上，写法类似于<code>x.T()</code>，x 指接口类型表达式，T 是一个类型（称为断言类型）。</p>
+<p>类型断言检查作为操作数的动态类型是否满足指定的断言类型</p>
+<p>类型断言检查一般有两种可能</p>
+<p><strong>断言类型 T 是具体类型</strong></p>
+<p>类型断言检查 x 的动态类型是否就是 T，检查成功，类型断言结果就是 x 的动态值，即 T 类型。</p>
+<p>类型断言就是用来从它的操作数中把具体类型的值提取出来的操作。检查失败，则操作崩溃</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">var</span> w io.Writer
+w := os.Stdout
+f := w.(*os.File)	<span style="color:#228b22">// success， f == os.Stdout
+</span><span style="color:#228b22"></span>c := w.(*bytes.Buffer)	<span style="color:#228b22">// fail, 接口类型持有的是 *os.File，不是 *bytes.Buffer
+</span></code></pre></div><p><strong>断言类型 T 是接口类型</strong></p>
+<p>类型断言检查 x 的动态类型是否满足 T。成功，结构仍是一个接口值，动态值并没有提取出来。接口值的类型和值部分也没有变更，只是结果的类型为接口类型 T</p>
+<p>即类型断言是一个接口值的表达式，从一个接口类型变为拥有另外一套方法的接口类型（通常方法数量是增多）但保留了接口值中的动态类型和动态值部分。</p>
+<p>如下类型断代码中，w 和 rw 都持有 os.Stdout，于是所有对应的动态类型都是 *os.File，但 w 作为 io.Writer 仅暴露了文件的 Write 方法，而 rw 还暴露了它的 Read 方法</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">var</span> w io.Writer
+w = os.Stdout
+rw := w.(io.ReadWriter)	<span style="color:#228b22">// success：*os.File 有 Read 和 Write 方法
+</span><span style="color:#228b22"></span>
+w = <span style="color:#658b00">new</span>(ByteCounter)
+rw = w.(io.ReadWriter)	<span style="color:#228b22">// fail：ByteCounter 没有 Read 方法
+</span></code></pre></div><p>无论哪种类型作为断言类型，如果操作数是一个空接口值，类型断言都失败。很少需要从一个接口类型向一个要求更宽松的类型做类型断言，该宽松类型的接口方法比原类型的少，而且是子集。因为除了在操作 nill 之外的情况下，在其他情况下这种操作与赋值一致</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">w = rw	<span style="color:#228b22">// io.ReaderWriter 可以赋值给 io.Writer
+</span><span style="color:#228b22"></span>w = rw.(io.Writer)	<span style="color:#228b22">// 仅当 rw == nil 时失败
+</span></code></pre></div><p>我们经常无法确定一个接口值得动态类型，这时需要检测它是否是某一个特定类型。如果类型断言出现在需要两个结果得赋值表达式中，那么断言不会在失败时崩溃，而是会多返回一个布尔值来指示断言是否成功</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">var</span> w io.Writer = os.Stdout
+f, ok := w.(*os.File)	<span style="color:#228b22">// success ok, f == os.Stdout
+</span><span style="color:#228b22"></span>b, ok := w.(*bytes.Buffer)	<span style="color:#228b22">// fail：!ok, b == nil
+</span></code></pre></div><p>惯例，第二个返回值赋给名为 ok 的变量，如果操作失败，ok 为 false，第一个返回值为断言类型的零值</p>
+<p>ok 返回值通常马上用来决定下一步做什么</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">if</span> f, ok := w.(*os.File); ok {
+    <span style="color:#228b22">// ...use f...
+</span><span style="color:#228b22"></span>}
+</code></pre></div><p>当类型断言得操作数是一个变量时，有时会看见返回值得名字与操作数变量名一致，原有的值就被新的返回值掩盖了</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">if</span> w, ok := w.(*os.File); ok {
+    <span style="color:#228b22">// ...use w...
+</span><span style="color:#228b22"></span>}
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc" style="box-sizing: unset;">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#类型断言">类型断言</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

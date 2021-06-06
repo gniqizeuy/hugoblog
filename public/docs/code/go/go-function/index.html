@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.82.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="go 方法">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="go function" />
+<meta property="og:description" content="go 方法" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/docs/code/go/go-function/" /><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2021-05-02T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-05-02T00:00:00&#43;00:00" />
+
+<title>go function | gniqizeuy blog</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2bc2364a4a4b31f0ec1debecf0a8f90a840821f143dfe1ac6a0f7cbcbdcf64ac.css" integrity="sha256-K8I2SkpLMfDsHevs8Kj5CoQIIfFD3&#43;Gsag98vL3PZKw=">
+<script defer src="/en.search.min.4085529fd83db486b5fa7023e8eee52fe1ef2e55a9e9e91617f11ce5f30c1870.js" integrity="sha256-QIVSn9g9tIa1&#43;nAj6O7lL&#43;HvLlWp6ekWF/Ec5fMMGHA="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>gniqizeuy blog</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/example/" class="">Example Site</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4e46b01272d410b3a99461d79326ddf4" class="toggle"  />
+    <label for="section-4e46b01272d410b3a99461d79326ddf4" class="flex justify-between">
+      <a  class="">Collapsed</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/example/collapsed/3rd-level/" class="">3rd Level</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/example/collapsed/3rd-level/4th-level/" class="">4th Level</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/" class="">shortcodes</a>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="toggle"  />
+    <label for="section-d3fc1bf6d66cd84b896a0af9f40cb1d5" class="flex justify-between">
+      <a href="http://example.org/docs/shortcodes/section/" class="">Section</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page1/" class="">Page1</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/shortcodes/section/page2/" class="">Page2</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Code</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-047407c19369f386be2464cbd25c7847" class="toggle" checked />
+    <label for="section-047407c19369f386be2464cbd25c7847" class="flex justify-between">
+      <a  class="">Go</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/code/go/go-function/" class=" active">go function</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/code/go/go-interface/" class="">go interface</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/code/go/go-goroutine-channel/" class="">go goroutine channel</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/code/go/go-summary/" class="">go summary</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/code/go/go-composite-data/" class="">go composite data</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li class="book-section-flat" >
+          
+  
+  
+
+  
+    <span>Soft</span>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="http://example.org/docs/soft/go-composite-data/" class="">protobuf install</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Blog
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var a=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(b){localStorage.setItem("menu.scrollTop",a.scrollTop)}),a.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>go function</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#方法声明">方法声明</a></li>
+            <li><a href="#指针接收者的方法">指针接收者的方法</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h3 id="方法声明">
+  方法声明
+  <a class="anchor" href="#%e6%96%b9%e6%b3%95%e5%a3%b0%e6%98%8e">#</a>
+</h3>
+<p>与声明普通函数类似，只是在函数名字前面多一个参数，参数把这个方法绑定到这个参数对应的类型上</p>
+<p>附加的参数称为方法的<em>接收者</em></p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">package</span> geometry
+
+<span style="color:#8b008b;font-weight:bold">import</span> <span style="color:#cd5555">&#34;math&#34;</span>
+
+<span style="color:#8b008b;font-weight:bold">type</span> Point <span style="color:#8b008b;font-weight:bold">struct</span>{ X, Y <span style="color:#00688b;font-weight:bold">float64</span> }
+
+<span style="color:#228b22">// 普通函数
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> <span style="color:#008b45">Distance</span>(p, q Point) <span style="color:#00688b;font-weight:bold">float64</span> {
+    <span style="color:#8b008b;font-weight:bold">return</span> math.<span style="color:#008b45">Hypot</span>(q.X-p.X, q.Y-p,Y)
+}
+
+<span style="color:#228b22">// Point 类型方法
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">func</span> (p Point) <span style="color:#008b45">Distance</span>(q point) <span style="color:#00688b;font-weight:bold">float64</span> {
+    <span style="color:#8b008b;font-weight:bold">return</span> math.<span style="color:#008b45">Hypot</span>(q.X-p.X, q.Y-p,Y)
+}
+</code></pre></div><p>go 中接收者不使用特殊名（this 或 self）；而是我们自己选择接收者名字。通常取类型名称的首字符</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">p := Point{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>}    
+q := Point{<span style="color:#b452cd">4</span>, <span style="color:#b452cd">6</span>}
+fmt.<span style="color:#008b45">Println</span>(<span style="color:#008b45">Distance</span>(p, q))
+fmt.<span style="color:#008b45">Println</span>(p.<span style="color:#008b45">Distance</span>(q))
+</code></pre></div><p>上述两个 Distance 函数声明没有冲突，第一个是包级别的函数（称为 geometry.Distance）。第二个声明一个类型 Point 的方法（Point.Distance）</p>
+<p>表达式 p.Distance 称作选择子（selector）因为它为接收者 p 选择合适的 Distance 方法。选择子也作用于选择结构类型中的字段值，由于方法与字段来自同一个命名空间，同名的字段与方法，编译器会报错。</p>
+<p>go 中的方法可以绑定到任何类型上，同一个包下的任何类型都可以声明方法，只要它的类型既不是指针类型也不是接口类型</p>
+<p>类型拥有的方法名必须是唯一的，但不同类型可以使用相同的方法名</p>
+<p>方法可以比函数更简单，在包的外部进行调用的时候，方法能狗使用更加简短的名字且省略包的名字</p>
+<h3 id="指针接收者的方法">
+  指针接收者的方法
+  <a class="anchor" href="#%e6%8c%87%e9%92%88%e6%8e%a5%e6%94%b6%e8%80%85%e7%9a%84%e6%96%b9%e6%b3%95">#</a>
+</h3>
+<p>主调函数会复制每一个实参变量，如果函数需要更新一个变量，或者实参太大，为了避免复制整个实参，可以使用指针来传递变量的地址。这同样适用于更新接收者</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">func</span> (p *Point) <span style="color:#008b45">ScaleBy</span>(factor <span style="color:#00688b;font-weight:bold">float64</span>) {
+    p.X *= factor
+    p.Y *= factor
+}
+</code></pre></div><p>方法的名字为 (*Point).ScaleBy。</p>
+<p>如果 Point 的任何一个方法都使用指针接收者，那么所有的 Point 方法都应该使用指针接收者</p>
+<p>命名类型（Point）与指向它的指针（*Point）是唯一可以出现在接收者处声明的类型。而且。为了防止混淆，不允许本身是指针的类型进行方法声明</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#8b008b;font-weight:bold">type</span> P *<span style="color:#00688b;font-weight:bold">int</span>
+
+<span style="color:#8b008b;font-weight:bold">func</span> (P) <span style="color:#008b45">f</span>() { <span style="color:#228b22">/*...*/</span> }    <span style="color:#228b22">// 编译错误，非法的接收者类型
+</span></code></pre></div><p>通过提供 *Point 能够调用 (*Point).ScaleBy 方法。以下均输出 &ldquo;{2, 4}&rdquo;</p>
+<div class="book-columns flex flex-wrap">
+  
+  <div class="flex-even markdown-inner">
+    <div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">r := &amp;Point{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>}
+r.<span style="color:#008b45">ScaleBy</span>(<span style="color:#b452cd">2</span>)
+fmt.<span style="color:#008b45">Println</span>(*r)
+</code></pre></div>
+  </div>
+  
+  <div class="flex-even markdown-inner">
+    <div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">p := Point{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>}
+pptr := &amp;p
+pptr.<span style="color:#008b45">ScaleBy</span>(<span style="color:#b452cd">2</span>)
+fmt.<span style="color:#008b45">Println</span>(p)
+</code></pre></div>
+  </div>
+  
+  <div class="flex-even markdown-inner">
+    <div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">p := Point{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>}
+(&amp;p).<span style="color:#008b45">ScaleBy</span>(<span style="color:#b452cd">2</span>)
+fmt.<span style="color:#008b45">Println</span>(p)
+</code></pre></div>
+  </div>
+  
+</div>
+
+<p>如果接收者 p 是 Point 类型的变量，但方法要求一个 *Point 接收者，可以使用简写 <code>p.ScaleBy(2)</code></p>
+<p>实际上编译器会对变量进行 &amp;p 的隐式转换。只有变量才允许这么做，包括结构体字段。不能对一个不能取地址的 Point 接收者参数调用 *Point 方法，因为无法获取临时变量的地址。</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">Point{<span style="color:#b452cd">1</span>, <span style="color:#b452cd">2</span>}.<span style="color:#008b45">ScaleBy</span>(<span style="color:#b452cd">2</span>)  <span style="color:#228b22">// 编译错误，不能获取 Point 类型字面量的地址
+</span></code></pre></div><p>但是如果实参接收者是 *Point 类型，以 Point.Distance 的方式调用 Point 类型的方法是合法的，因为有办法从地址中获取 Point 的值；只要解析引用指向接收值的指针值即可。编译器会自动插入一个隐式的 * 操作符。下面两个函数的调用效果是一样的</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">pptr.<span style="color:#008b45">Distance</span>(q)
+(*pptr).<span style="color:#008b45">Distance</span>(q)
+</code></pre></div></article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc" style="box-sizing: unset;">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#方法声明">方法声明</a></li>
+            <li><a href="#指针接收者的方法">指针接收者的方法</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

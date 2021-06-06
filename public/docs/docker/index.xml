@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gniqizeuy blog</title>
+    <link>http://example.org/docs/docker/</link>
+    <description>Recent content on gniqizeuy blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 19 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/docs/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>docker command</title>
+      <link>http://example.org/docs/docker/docker-cmd/</link>
+      <pubDate>Mon, 19 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/docker/docker-cmd/</guid>
+      <description>Docker 子命令分类#   子命令分类 子命令     Docker 环境信息 info、version   容器生命周期管理 Create、exec、kill、pause、restart、rm、run、start、stop、unpause   镜像仓库命令 login、logout、pull、push、search   镜像管理 build、images、import、load、rmi、save、tag、commit   容器运维操作 attach、export、inspect、port、ps、rename、stats、top、wait、cp、diff、update   容器资源管理 volume、network   系统日志信息 events、history、logs    docker ps 命令
+docker ps 命令可以查看容器的相关信息，默认只显示只在运行的容器的信息，
+可以查看到的信息包括
+ CONTAINER ID NAMES IMAGE STATUS 容器启动后执行的 COMMAND 创建时间 CREATED 绑定的端口 PORTS  docker ps 命令最常用的功能就是查看容器的 CONTAINER ID，以便对特定容器进行操作
+docker ps [OPTIONS] 常用的选项有 -a 和 -l。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gniqizeuy blog</title>
+    <link>http://example.org/docs/vue/</link>
+    <description>Recent content on gniqizeuy blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 May 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/docs/vue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>other</title>
+      <link>http://example.org/docs/vue/other/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/vue/other/</guid>
+      <description>vue-cli3 控制台network存在 info#服务端：sockjs-node
+客户端：sockjs-clien
+如果你的项目没有用到 sockjs，vuecli3 运行 npm run serve 之后 network 里面一直一个接口：http://localhost:8080/sockjs-node/info?t=1462183700002
+关闭info#1.找到/node_modules/sockjs-client/dist/sockjs.js
+2.注释下面代码
+try { // self.xhr.send(payload);  } catch (e) { self.emit(&amp;#39;finish&amp;#39;, 0, &amp;#39;&amp;#39;); self._cleanup(false); } </description>
+    </item>
+    
+    <item>
+      <title>proxy</title>
+      <link>http://example.org/docs/vue/proxy/</link>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/docs/vue/proxy/</guid>
+      <description>vue 查看代理请求的真实地址#在文件 vue.config.js 文件里面找到 proxyTable 添加配置。
+&amp;#39;/api&amp;#39;: { traget: url, changeOrigin: true loglevel: &amp;#39;debug&amp;#39; } </description>
+    </item>
+    
+  </channel>
+</rss>

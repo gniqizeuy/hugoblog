@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mysql on gniqizeuy blog</title>
+    <link>http://example.org/categories/mysql/</link>
+    <description>Recent content in Mysql on gniqizeuy blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 12 Apr 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://example.org/categories/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Mysql tuning</title>
+      <link>http://example.org/posts/mysql-tuning/</link>
+      <pubDate>Mon, 12 Apr 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/posts/mysql-tuning/</guid>
+      <description>&lt;h2 id=&#34;schema-与-数据类型优化&#34;&gt;
+  Schema 与 数据类型优化
+  &lt;a class=&#34;anchor&#34; href=&#34;#schema-%e4%b8%8e-%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b%e4%bc%98%e5%8c%96&#34;&gt;#&lt;/a&gt;
+&lt;/h2&gt;
+&lt;p&gt;良好的&lt;strong&gt;逻辑设计&lt;/strong&gt;和&lt;strong&gt;物理设计&lt;/strong&gt;是高性能的基石，应该根据系统将要执行的&lt;strong&gt;查询语句&lt;/strong&gt;来设计 schema&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
